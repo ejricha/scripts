@@ -17,8 +17,6 @@ main()
 	else
 		SRC=".."
 	fi
-	echo "DIR=$DIR"
-	echo "SRC=$SRC"
 
 	# Source the common script
 	source $DIR/common.sh

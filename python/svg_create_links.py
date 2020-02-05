@@ -43,13 +43,11 @@ def remove_links(filename):
                 # if
                 link = '<a href="%s.svg">%s</a>' % (name, line)
                 line = link
-                print(line)
             # fi
             # Write the line to file
             fout.write('%s\n' % line)
         # for
     # with
-    print()
 # def remove_links()
 
 # Run the main function
