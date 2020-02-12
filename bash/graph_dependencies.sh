@@ -25,9 +25,22 @@ main()
 	check_correct_directory $SRC
 
 	# Create and fix up the graphs
+	set_graphviz_options
 	create_graphs $SRC
 	convert_to_svg
 	make_links_clickable
+}
+
+# Override some default options for graphviz
+set_graphviz_options()
+{
+	echo -e "\
+# Don't show external libraries
+set(GRAPHVIZ_EXTERNAL_LIBS FALSE)
+
+# Show custom targets (requires CMake 3.17+)
+set(GRAPHVIZ_CUSTOM_TARGETS TRUE)
+" > CMakeGraphVizOptions.cmake
 }
 
 # Ensure that . contains CMakeCache.txt,
