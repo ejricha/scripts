@@ -2,6 +2,7 @@
 #
 # graph_dependencies.sh
 
+CMAKE=cmake
 GRAPH=graph
 DOT=graph.dot
 
@@ -66,7 +67,7 @@ create_graphs()
 {
 	# Only argument to this function is the source directory
 	SRC=$1
-	RUN cmake --graphviz=$GRAPH/$DOT $SRC
+	RUN $CMAKE --graphviz=$GRAPH/$DOT $SRC
 	RUN mv $GRAPH/$DOT $GRAPH/$DOT.ALL
 }
 
